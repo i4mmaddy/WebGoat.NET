@@ -1,23 +1,10 @@
 Auth:
-  project_token: "36720d9d-802f-43b7-a758-1bf088bb6ff9"
-  customer_token:  "4941f85a-5453-4f94-9247-d5565b4bd116"
-
-
-
+  project_token: 2b41720b-e829-4a1a-b991-1def2ef98432
+  customer_token: c52007d6-f7e9-4bb9-a41e-7c1e2b7020d8
 SAST:
-  language: "semgrep"
-
-
-#SCA:
- # language: "js"
-  
-  
-#DAST:
- # type: "WEB"
-  #url: "https://google.co.in/"
- 
- 
- #Secret_Scan: True
-
+  language: semgrep
+SCA:
+  language: dotnet
+Secret_Scan: true
 
   
