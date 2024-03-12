@@ -4,20 +4,20 @@ Auth:
 
 
 
-#SAST:
- # language: "csharp"
+SAST:
+  language: "semgrep"
 
 
-SCA:
-  language: "js"
+#SCA:
+ # language: "js"
   
   
-DAST:
-  type: "WEB"
-  url: "https://google.co.in/"
+#DAST:
+ # type: "WEB"
+  #url: "https://google.co.in/"
  
  
- Secret_Scan: True
+ #Secret_Scan: True
 
 
   
