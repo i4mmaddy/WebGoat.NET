@@ -4,7 +4,7 @@ Auth:
 SAST:
   language: semgrep
 SCA:
-  language: dotnet
+  language: others
 Secret_Scan: true
 
   
