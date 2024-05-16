@@ -1,14 +1,23 @@
-on:
-  push:
-    branches: [ master ]
-jobs:
-  Boman:
-    runs-on: ubuntu-latest
-    steps:     
-      - uses: actions/checkout@v2
+on: [workflow_dispatch]
 
-      - name: boman
+jobs:
+  boman_scan:
+    runs-on: ubuntu-latest
+    name: Test Job
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Boman
         run: |
+          #sudo python3 -m pip install -U pip
+          #sudo python3 -m pip install -U setuptools
+          #sudo pip install --extra-index-url https://test.pypi.org/simple/ boman-cli-uat==12.7
+          #sudo boman-cli-uat -a run -u https://devapi.boman.ai/v2/ -uid $(id -u)
           sudo pip install boman-cli
           sudo boman-cli -a run 
-    
+      - name: Upload boman result raw file
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifact files
+          path: boman*
