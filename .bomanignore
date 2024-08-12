@@ -1,2 +1,6 @@
 WebGoat/Content/
 /src/WebGoat/Resources/
+/WebGoat/lib/log4net.dll
+
+
+
