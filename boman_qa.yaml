@@ -13,7 +13,7 @@ SAST:
 
 SCA:
   language: "js" #language optional
-  #ignore_file: True
+  ignore_file: True
  
 #Secret_Scan: True
   
