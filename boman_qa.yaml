@@ -9,9 +9,11 @@ Auth:
    
 SAST:
   language: "semgrep"
+  ignore_file: True
 
 SCA:
   language: "js" #language optional
+  #ignore_file: True
  
 #Secret_Scan: True
   
