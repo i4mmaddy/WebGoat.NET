@@ -1,4 +1,11 @@
-WebGoat/App_Code/
+#WebGoat/App_Code/
+#WebGoat/Resources/
+#WebGoat/lib/log4net.dll
+
+
+
+
+
 
 
 
