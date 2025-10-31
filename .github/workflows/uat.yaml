@@ -18,7 +18,11 @@ jobs:
       - uses: actions/checkout@v2
       
       # Runs a single command using the runners shell
-      - name: Install packages
-        run: sudo pip install --extra-index-url https://test.pypi.org/simple/ boman-cli-uat
-      - name: Run scan  
-        run: sudo boman-cli-uat -a run -config ./boman_qa.yaml -u https://qa.boman.ai
+      - name: manuall sca
+        run: docker run --rm -v "${PWD}:/src"  owasp/dependency-check --scan /src --format JSON
+      
+     
+     #- name: Install packages
+      #  run: sudo pip install --extra-index-url https://test.pypi.org/simple/ boman-cli-uat
+      #- name: Run scan  
+       # run: sudo boman-cli-uat -a run -config ./boman_qa.yaml -u https://qa.boman.ai
