@@ -18,11 +18,21 @@ jobs:
       - uses: actions/checkout@v2
       
       # Runs a single command using the runners shell
-      - name: manuall sca
-        run: docker run --rm -v "${PWD}:/src"  owasp/dependency-check --scan /src --format JSON
-      
-     
-     #- name: Install packages
-      #  run: sudo pip install --extra-index-url https://test.pypi.org/simple/ boman-cli-uat
-      #- name: Run scan  
-       # run: sudo boman-cli-uat -a run -config ./boman_qa.yaml -u https://qa.boman.ai
+      - name: Install packages
+        run: pip install --extra-index-url https://test.pypi.org/simple/ boman-cli-uat==15.6.3
+        #run: pip install boman-cli==2.4.6
+      - name: Run scan  
+        run: boman-cli-uat -a run -u https://qa.boman.ai -config ./boman_qa.yaml
+        
+        #sudo boman-cli -a run -u https://dashboard.boman.ai/ -at ${{secrets.BOMAN_APP_TOKEN}} -ct ${{secrets.BOMAN_CUSTOMER_TOKEN}}
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifacts
+          path: |
+            boman_zap_auth_plan.yaml
+            session_management.js
+            boman_semgrep.jsoin
+            cloc.json
+          retention-days: 5
